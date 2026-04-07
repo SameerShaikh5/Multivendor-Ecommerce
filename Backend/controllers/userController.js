@@ -46,10 +46,9 @@ export const register = TryCatch(async (req, res, next) => {
   // set secure cookie
   res.cookie("token", token, {
     httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
-    sameSite: "lax",
-    maxAge: 7 * 24 * 60 * 60 * 1000
-  });
+    secure: true,
+    sameSite: "none"
+  })
 
   return res.status(201).json({
     success: true,
@@ -58,7 +57,7 @@ export const register = TryCatch(async (req, res, next) => {
       name: newUser.name,
       email: newUser.email,
       role: newUser.role,
-      contact:newUser.contact
+      contact: newUser.contact
     }
   });
 });
@@ -100,10 +99,9 @@ export const login = TryCatch(async (req, res, next) => {
   // send cookie
   res.cookie("token", token, {
     httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
-    sameSite: "lax",
-    maxAge: 7 * 24 * 60 * 60 * 1000
-  });
+    secure: true,
+    sameSite: "none"
+  })
 
   return res.status(200).json({
     success: true,
@@ -112,7 +110,7 @@ export const login = TryCatch(async (req, res, next) => {
       name: user.name,
       email: user.email,
       role: user.role,
-      contact:user.contact
+      contact: user.contact
     }
   });
 });
@@ -188,7 +186,7 @@ export const checkLogin = TryCatch(async (req, res, next) => {
       name: req.user.name,
       email: req.user.email,
       role: req.user.role,
-      contact:req.user.contact
+      contact: req.user.contact
     },
   });
 
