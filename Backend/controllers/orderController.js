@@ -3,7 +3,7 @@ import { TryCatch } from "../middlewares/errorMiddleware.js";
 import Cart from "../models/CartModel.js";
 import OrderItem from "../models/OrderItem.js";
 import Order from "../models/OrderModel.js";
-import ErrorHandler from "../utils/errorHandler.js";
+import ErrorHandler from "../utils/ErrorHandler.js"
 import crypto from "crypto";
 import Payment from "../models/PaymentModel.js";
 
