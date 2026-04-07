@@ -27,7 +27,7 @@ app.use(cookieParser())
 app.use(
   cors({
     origin: process.env.FRONTEND_URL,
-    credentials: true, // VERY IMPORTANT if using cookies/sessions
+    credentials: true, 
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
