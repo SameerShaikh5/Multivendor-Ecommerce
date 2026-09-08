@@ -3,7 +3,7 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-  baseURL: "https://multivendor-ecommerce-loq1.onrender.com",
+  baseURL: import.meta.env.VITE_BACKEND_URL,
   withCredentials: true, // if using cookies
   headers: {
     "Content-Type": "application/json",
